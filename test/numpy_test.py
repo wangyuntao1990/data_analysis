@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
+
 a = np.array([[4, 3, 2], [2, 4, 1]])
 print(np.sort(a))
 print(np.sort(a, axis=None))
@@ -10,16 +11,18 @@ print(np.sort(a, axis=1))
 print("\npart 6 作业\n")
 
 persontype = np.dtype({
-    'names':['name', 'chinese','english','math' ],
-    'formats':['S32', 'i', 'i', 'i']})
-peoples = np.array([("ZhangFei", 66, 65, ), ("GuanYu", 95, 85, 98),
-       ("ZhaoYun", 93, 92, 96), ("HuangZhong", 90, 88, 77),
-       ("DianWei", 80, 90, 90)], dtype=persontype)
+    'names': ['name', 'chinese', 'english', 'math'],
+    'formats': ['S32', 'i', 'i', 'i']})
+peoples = np.array([("ZhangFei", 66, 65,), ("GuanYu", 95, 85, 98),
+                    ("ZhaoYun", 93, 92, 96), ("HuangZhong", 90, 88, 77),
+                    ("DianWei", 80, 90, 90)], dtype=persontype)
 # 指定的竖列
 name = peoples[:]['name']
 chinese = peoples[:]['chinese']
 english = peoples[:]['english']
 math = peoples[:]['math']
+
+
 # 定义函数用于显示每一排的内容
 
 
@@ -35,5 +38,5 @@ show("数学", math)
 
 print("排名:")
 # 用sorted函数进行排序
-ranking = sorted(peoples,key=lambda x:x[1]+x[2]+x[3], reverse=True)
+ranking = sorted(peoples, key=lambda x: x[1] + x[2] + x[3], reverse=True)
 print(ranking)
